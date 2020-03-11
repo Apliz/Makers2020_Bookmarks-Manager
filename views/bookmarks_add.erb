@@ -1,0 +1,28 @@
+<style>
+table, th, td { border: 1px solid black; }
+</style>
+
+<div>
+  <h5><em> Database modifications </em></h5>
+  <table style='width:15%'>
+    <tr>
+      <th> Title </th>
+      <th> URL </th>
+    </tr>
+    <tr>
+      <td> <%= @title %> </td>
+      <td> <%= @url %> </td>
+    </tr>
+  </table><br><br>
+</div>
+<div> 
+  <p><em> Navigate </em>
+  <form action= '/home' method= 'get'>
+    <input type='submit' name='home' value='Homepage'>
+  </form>
+  <form action= '/bookmarks' method=  'get'>
+    <input type='submit' name='Go' value='View Database'>
+  </form>
+  </p>
+
+</div>

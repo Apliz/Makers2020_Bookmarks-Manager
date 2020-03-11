@@ -1,7 +1,47 @@
+
 <div>
+<style>
+  .dropbtn {
+  background-color: #24a0ed;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border:  none;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a:hover {background-color: #ddd;}
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropbtn {background-color: grey;}
+</style>
+
 <ul>
-  <% @bookmark.each do |url| %>
-    <li> <%= url %> </li>
+  <% @bookmark.each do |title| %>
+    <li> <input type='checkbox' name='selection' value='<%= title %>'> <a href='bookmarks/url' value='<%= @url %>'> <%= title %> </a></li>
   <% end %> 
 </ul>
 </div>
+
+
+
+
+
+<div class="dropdown">
+  <button class="dropbtn">Actions</button>
+  <div class="dropdown-content">
+    <a href="/bookmarks/url"> View URL </a>
+    <a href="#">View ID</a>
+    <a href="#">Delete Entry</a>
+     <a href="#">Update Entry</a>
+  </div>
+</div> 
