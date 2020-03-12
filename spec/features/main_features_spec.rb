@@ -7,9 +7,9 @@ feature 'Bookmarking' do
 
   scenario 'retreives set array from Bookmark class' do
     conn = PG.connect( dbname: 'bookmark_manager_test')
-    conn.exec("INSERT INTO bookmarks (id, title, url) VALUES (1, 'Makers Academy', 'http://www.makersacademy.com');")
+    conn.exec("INSERT INTO bookmarks (title, url) VALUES ('Makers Academy', 'http://www.makersacademy.com');")
     click_button('retrieve')
-    expect(page).to have_content('http://www.makersacademy.com')
+    expect(page).to have_content('Makers Academy')
   end
 
   scenario 'can add a given URL by form to the Db' do
